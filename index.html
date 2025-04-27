@@ -51,8 +51,8 @@
     const map = new maplibregl.Map({
       container: 'map',
       style: 'mono.json',
-      zoom: 12,
-      center: [139.47396, 35.90129],
+      zoom: 11.91,
+      center: [139.47507, 35.90596],
       pitch: 0,
       bearing: 0,
       maxPitch: 85,
@@ -76,7 +76,7 @@
     }));
     map.addControl(new maplibregl.AttributionControl({
       compact: true,
-      customAttribution: '（<a href="https://twitter.com/shi__works" target="_blank">X(旧Twitter)</a> | <a href="" target="_blank">GitHub</a>） ',
+      customAttribution: '（<a href="https://twitter.com/shi__works" target="_blank">X(旧Twitter)</a> | <a href="https://github.com/shiwaku/mlit-reinfolib-map-on-maplibre" target="_blank">GitHub</a>） ',
     }));
 
     map.on('load', () => {
