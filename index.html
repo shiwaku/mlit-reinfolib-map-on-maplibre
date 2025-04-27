@@ -1,0 +1,235 @@
+<html>
+
+<head>
+  <title>不動産情報ライブラリ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.js'></script>
+  <link href='https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.css' rel='stylesheet' />
+  <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+  <style>
+    html,
+    body,
+    #map {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .popup-table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .popup-table th,
+    .popup-table td {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+      overflow-wrap: break-word;
+    }
+
+    .popup-table th {
+      background-color: #f2f2f2;
+    }
+
+    .maplibregl-popup-content {
+      height: 40vh;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script type="text/javascript">
+    const protocol = new pmtiles.Protocol();
+    maplibregl.addProtocol('pmtiles', protocol.tile);
+
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'mono.json',
+      zoom: 12,
+      center: [139.47396, 35.90129],
+      pitch: 0,
+      bearing: 0,
+      maxPitch: 85,
+      hash: true,
+      attributionControl: false,
+    })
+
+    map.addControl(new maplibregl.NavigationControl());
+    map.addControl(new maplibregl.FullscreenControl());
+    map.addControl(new maplibregl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: false
+      },
+      fitBoundsOptions: { maxZoom: 18 },
+      trackUserLocation: true,
+      showUserLocation: true
+    }));
+    map.addControl(new maplibregl.ScaleControl({
+      maxWidth: 200,
+      unit: 'metric'
+    }));
+    map.addControl(new maplibregl.AttributionControl({
+      compact: true,
+      customAttribution: '（<a href="https://twitter.com/shi__works" target="_blank">X(旧Twitter)</a> | <a href="" target="_blank">GitHub</a>） ',
+    }));
+
+    map.on('load', () => {
+      // 都市計画決定GISデータ（用途地域）のソース
+      map.addSource("tk-youto", {
+        type: "vector",
+        tiles: [
+          "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT002/{z}/{x}/{y}.pbf"
+        ],
+        // minzoom: 13,
+        // minzoom: 15,
+        attribution: '<a href="https://www.reinfolib.mlit.go.jp/">不動産情報ライブラリAPI（国土交通省）</a>'
+      });
+
+      // 表示レイヤを追加
+      map.addLayer({
+        id: "tk-youto-polygons",
+        type: "fill",
+        source: "tk-youto",
+        "source-layer": "hits",
+        paint: {
+          "fill-color": [
+            "match",
+            ["get", "use_area_ja"],
+            "第１種低層住居専用地域", "rgb(0, 178, 133)",
+            "第２種低層住居専用地域", "rgb(145, 207, 185)",
+            "第１種中高層住居専用地域", "rgb(120, 206, 63)",
+            "第２種中高層住居専用地域", "rgb(173, 223, 33)",
+            "第１種住居地域", "rgb(235, 238, 94)",
+            "第２種住居地域", "rgb(255, 210, 182)",
+            "準住居地域", "rgb(255, 166, 56)",
+            "近隣商業地域", "rgb(255, 176, 195)",
+            "商業地域", "rgb(255, 89, 61)",
+            "準工業地域", "rgb(167, 148, 197)",
+            "工業地域", "rgb(185, 234, 255)",
+            "工業専用地域", "rgb(95, 197, 251)",
+            "田園住居地域", "rgb(196, 215, 155)",
+            "#333"
+          ],
+          "fill-opacity": 0.7,
+          "fill-outline-color": "rgba(255, 0, 0, 1)"
+        }
+      });
+
+      // 不動産価格（取引価格・成約価格）ポイントのソース
+      map.addSource("real-estate-price", {
+        type: "vector",
+        tiles: [
+          "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT001/{z}/{x}/{y}.pbf?from=20234&to=20243"
+        ],
+        // minzoom: 11,
+        // minzoom: 15,
+        attribution: '<a href="https://www.reinfolib.mlit.go.jp/">不動産情報ライブラリAPI（国土交通省）</a>'
+      });
+
+      // 表示レイヤを追加
+      map.addLayer({
+        id: "real-estate-points",
+        type: "circle",
+        source: "real-estate-price",
+        "source-layer": "hits",
+        paint: {
+          "circle-radius": 10,
+          "circle-color": "#ff0000",
+          "circle-stroke-width": 1,
+          "circle-stroke-color": "#ffffff"
+        }
+      });
+
+      // 地価公示・地価調査のポイントのソース
+      map.addSource("real-land-price", {
+        type: "vector",
+        tiles: [
+          "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT002/{z}/{x}/{y}.pbf?year=2024"
+        ],
+        // minzoom: 13,
+        // minzoom: 15,
+        attribution: '<a href="https://www.reinfolib.mlit.go.jp/">不動産情報ライブラリAPI（国土交通省）</a>'
+      });
+
+      // 表示レイヤを追加
+      map.addLayer({
+        id: "real-land-points",
+        type: "circle",
+        source: "real-land-price",
+        "source-layer": "hits",
+        paint: {
+          "circle-radius": 10,
+          "circle-color": "#0000ff",
+          "circle-stroke-width": 1,
+          "circle-stroke-color": "#ffffff"
+        }
+      });
+
+      map.showTileBoundaries = true;
+
+    })
+
+    map.on("click", "real-estate-points", (e) => {
+      const coordinates = e.features[0].geometry.coordinates.slice();
+      const properties = e.features[0].properties;
+
+      let tableHTML = "<table class='popup-table'>";
+      tableHTML += "<tr><th>属性</th><th>値</th></tr>";
+      for (let key in properties) {
+        tableHTML += `<tr><td>${key}</td><td>${properties[key]}</td></tr>`;
+      }
+      tableHTML += "</table>";
+
+      new maplibregl.Popup({
+        maxWidth: "300px"
+      })
+        .setLngLat(coordinates)
+        .setHTML(tableHTML)
+        .addTo(map);
+    });
+
+    map.on("click", "real-land-points", (e) => {
+      const coordinates = e.features[0].geometry.coordinates.slice();
+      const properties = e.features[0].properties;
+
+      let tableHTML = "<table class='popup-table'>";
+      tableHTML += "<tr><th>属性</th><th>値</th></tr>";
+      for (let key in properties) {
+        tableHTML += `<tr><td>${key}</td><td>${properties[key]}</td></tr>`;
+      }
+      tableHTML += "</table>";
+
+      new maplibregl.Popup({
+        maxWidth: "300px"
+      })
+        .setLngLat(coordinates)
+        .setHTML(tableHTML)
+        .addTo(map);
+    });
+
+    map.on("click", "tk-youto-polygons", (e) => {
+      const { lng, lat } = e.lngLat;
+      const properties = e.features[0].properties;
+
+      let tableHTML = "<table class='popup-table'>";
+      tableHTML += "<tr><th>属性</th><th>値</th></tr>";
+      for (let key in properties) {
+        tableHTML += `<tr><td>${key}</td><td>${properties[key]}</td></tr>`;
+      }
+      tableHTML += "</table>";
+
+      new maplibregl.Popup({ maxWidth: "300px" })
+        .setLngLat([lng, lat])
+        .setHTML(tableHTML)
+        .addTo(map);
+    });
+  </script>
+</body>
+
+</html>
