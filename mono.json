@@ -29,11 +29,27 @@
       ],
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
+    "XKT001": {
+      "type": "vector",
+      "minzoom": 13,
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT001/{z}/{x}/{y}.pbf"
+      ],
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
     "XKT002": {
       "type": "vector",
       "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT002/{z}/{x}/{y}.pbf"
+      ],
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT003": {
+      "type": "vector",
+      "minzoom": 13,
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT003/{z}/{x}/{y}.pbf"
       ],
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     }
@@ -24485,6 +24501,50 @@
         ],
         "text-halo-color": "hsla(0,0%,100%,1)",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "XKT001",
+      "type": "fill",
+      "source": "XKT001",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "area_classification_ja"
+          ],
+          "市街化区域",
+          "rgb(255, 255, 204)",
+          "市街化調整区域",
+          "rgb(229, 229, 229)",
+          "#333"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "XKT003",
+      "type": "fill",
+      "source": "XKT003",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "kubun_name_ja"
+          ],
+          "居住誘導区域",
+          "rgb(255, 255, 204)",
+          "都市機能誘導区域",
+          "rgb(229, 229, 229)",
+          "#333"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "rgba(255, 0, 0, 1)"
       }
     },
     {

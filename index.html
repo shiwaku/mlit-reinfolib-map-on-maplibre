@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>不動産情報ライブラリAPI</title>
+  <title>不動産情報ライブラリ</title>
   <link href="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
 </head>
@@ -39,10 +39,24 @@
             </div>
             <div class="select_box">
               <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT001" checked />
+                <span class="slider"></span>
+              </label>
+              区域区分
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
                 <input type="checkbox" class="layer-switch" data-layer="XKT002" checked />
                 <span class="slider"></span>
               </label>
               用途地域
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT003" checked />
+                <span class="slider"></span>
+              </label>
+              立地適正化計画
             </div>
           </fieldset>
         </details>

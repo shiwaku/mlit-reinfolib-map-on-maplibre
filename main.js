@@ -6,7 +6,7 @@ const map = new maplibregl.Map({
   style: 'mono.json',
   center: [139.47507, 35.90596],
   zoom: 13,
-  minZoom: 13,
+  minZoom: 12,
   maxPitch: 85,
   pitch: 0,
   bearing: 0,
@@ -30,7 +30,7 @@ map.addControl(new maplibregl.AttributionControl({
     '<a href="https://github.com/shiwaku/mlit-reinfolib-map-on-maplibre" target="_blank">GitHub</a>）',
 }));
 
-const layerIds = ['XPT001', 'XPT002', 'XKT002'];
+const layerIds = ['XPT001', 'XPT002', 'XKT001', 'XKT002', 'XKT003'];
 
 map.on('load', () => {
   map.showTileBoundaries = true;
@@ -59,8 +59,9 @@ function setupLayerSwitches() {
  */
 function addPopupHandler(layerId) {
   map.on('click', layerId, e => {
-    // XKT002 は click 位置を e.lngLat から取得
-    const coords = layerId === 'XKT002'
+    // XKT001 と XKT002 はクリック位置を e.lngLat から取得
+    const useLngLat = layerId === 'XKT001' || layerId === 'XKT002' || layerId === 'XKT003';
+    const coords = useLngLat
       ? [e.lngLat.lng, e.lngLat.lat]
       : e.features[0].geometry.coordinates.slice();
     const props = e.features[0].properties;
