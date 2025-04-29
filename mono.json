@@ -24537,14 +24537,14 @@
             "get",
             "kubun_name_ja"
           ],
-          "居住誘導区域",
-          "rgb(255, 255, 204)",
           "都市機能誘導区域",
-          "rgb(229, 229, 229)",
+          "rgb(0, 0, 255)",
+          "居住誘導区域",
+          "rgb(0, 255, 0)",
           "#333"
         ],
-        "fill-opacity": 0.7,
-        "fill-outline-color": "rgba(255, 0, 0, 1)"
+        "fill-opacity": 0.5,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
       }
     },
     {
