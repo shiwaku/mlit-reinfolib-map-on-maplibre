@@ -15,50 +15,50 @@
     },
     "XPT001": {
       "type": "vector",
-      "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT001/{z}/{x}/{y}.pbf?from=20234&to=20243"
       ],
+      "minzoom": 12,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XPT002": {
       "type": "vector",
-      "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT002/{z}/{x}/{y}.pbf?year=2024"
       ],
+      "minzoom": 12,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT001": {
       "type": "vector",
-      "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT001/{z}/{x}/{y}.pbf"
       ],
+      "minzoom": 12,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT002": {
       "type": "vector",
-      "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT002/{z}/{x}/{y}.pbf"
       ],
+      "minzoom": 12,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT003": {
       "type": "vector",
-      "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT003/{z}/{x}/{y}.pbf"
       ],
+      "minzoom": 12,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT013": {
       "type": "vector",
-      "minzoom": 13,
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT013/{z}/{x}/{y}.pbf"
       ],
+      "minzoom": 12,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     }
   },
@@ -12816,25 +12816,9 @@
         ],
         "fill-opacity": 0.7,
         "fill-outline-color": "rgba(255, 0, 0, 1)"
-      }
-    },
-    {
-      "id": "XKT003",
-      "type": "fill",
-      "source": "XKT003",
-      "source-layer": "hits",
-      "paint": {
-        "fill-color": [
-          "match",
-          ["get", "kubun_name_ja"],
-          "都市機能誘導区域",
-          "rgb(0, 0, 255)",
-          "居住誘導区域",
-          "rgb(0, 255, 0)",
-          "#333"
-        ],
-        "fill-opacity": 0.5,
-        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
       }
     },
     {
@@ -12876,6 +12860,9 @@
         ],
         "fill-opacity": 0.7,
         "fill-outline-color": "rgba(255, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
       }
     },
     {
@@ -12889,26 +12876,65 @@
           ["coalesce", ["to-number", ["get", "PT00_2025"]], 0],
           "rgba(0,0,0,0)",
           1,
-          "#8506F6",
+          "#00BFFF",
           11,
-          "#4668F4",
+          "#00FFFF",
           21,
-          "#09B7E6",
+          "#00FF00",
           51,
-          "#00D6C9",
+          "#BFFF00",
           101,
-          "#8DF39F",
+          "#FFFF00",
           201,
-          "#DAD26E",
+          "#FFBF00",
           501,
-          "#FEA35A",
+          "#FF7F00",
           1001,
-          "#F95D30",
+          "#FF3F00",
           2001,
           "#FF0000"
         ],
         "fill-opacity": 0.7,
         "fill-outline-color": "rgba(178, 178, 178, 1)"
+      }
+    },
+    {
+      "id": "XKT003",
+      "type": "fill",
+      "source": "XKT003",
+      "source-layer": "hits",
+      "filter": ["!=", ["get", "kubun_name_ja"], "立地適正化計画区域"],
+      "paint": {
+        "fill-color": [
+          "match",
+          ["get", "kubun_name_ja"],
+          "都市機能誘導区域",
+          "#FF003F",
+          "居住誘導区域",
+          "#003FFF",
+          "#333"
+        ],
+        "fill-opacity": 0.2,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "XKT003-line",
+      "type": "line",
+      "source": "XKT003",
+      "source-layer": "hits",
+      "filter": ["!=", ["get", "kubun_name_ja"], "立地適正化計画区域"],
+      "paint": {
+        "line-color": [
+          "match",
+          ["get", "kubun_name_ja"],
+          "都市機能誘導区域",
+          "#FF003F",
+          "居住誘導区域",
+          "#003FFF",
+          "#333"
+        ],
+        "line-width": 2
       }
     },
     {

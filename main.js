@@ -5,7 +5,7 @@ const map = new maplibregl.Map({
   container: "map",
   style: "mono.json",
   center: [139.47507, 35.90596],
-  zoom: 13,
+  zoom: 12,
   minZoom: 12,
   maxPitch: 85,
   pitch: 0,
@@ -34,7 +34,15 @@ map.addControl(
   })
 );
 
-const layerIds = ["XPT001", "XPT002", "XKT001", "XKT002", "XKT003", "XKT013"];
+const layerIds = [
+  "XPT001",
+  "XPT002",
+  "XKT001",
+  "XKT002",
+  "XKT003",
+  "XKT003-line",
+  "XKT013",
+];
 
 map.on("load", () => {
   map.showTileBoundaries = false;
@@ -45,6 +53,7 @@ map.on("load", () => {
 /**
  * チェックボックスの状態に応じてレイヤー表示を切り替え
  */
+/*
 function setupLayerSwitches() {
   document.querySelectorAll(".layer-switch").forEach((input) => {
     input.addEventListener("change", () => {
@@ -54,6 +63,24 @@ function setupLayerSwitches() {
         "visibility",
         input.checked ? "visible" : "none"
       );
+    });
+  });
+}
+*/
+
+function setupLayerSwitches() {
+  document.querySelectorAll(".layer-switch").forEach((input) => {
+    input.addEventListener("change", () => {
+      input.dataset.layer
+        .split(",")
+        .map((id) => id.trim())
+        .forEach((layer) => {
+          map.setLayoutProperty(
+            layer,
+            "visibility",
+            input.checked ? "visible" : "none"
+          );
+        });
     });
   });
 }
