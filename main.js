@@ -6,7 +6,7 @@ const map = new maplibregl.Map({
   style: "mono.json",
   center: [139.47507, 35.90596],
   zoom: 12,
-  minZoom: 12,
+  minZoom: 11,
   maxPitch: 85,
   pitch: 0,
   bearing: 0,

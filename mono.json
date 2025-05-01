@@ -18,7 +18,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT001/{z}/{x}/{y}.pbf?from=20234&to=20243"
       ],
-      "minzoom": 12,
+      "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XPT002": {
@@ -26,7 +26,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT002/{z}/{x}/{y}.pbf?year=2024"
       ],
-      "minzoom": 12,
+      "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT001": {
@@ -34,7 +34,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT001/{z}/{x}/{y}.pbf"
       ],
-      "minzoom": 12,
+      "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT002": {
@@ -42,7 +42,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT002/{z}/{x}/{y}.pbf"
       ],
-      "minzoom": 12,
+      "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT003": {
@@ -50,7 +50,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT003/{z}/{x}/{y}.pbf"
       ],
-      "minzoom": 12,
+      "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT013": {
@@ -58,7 +58,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT013/{z}/{x}/{y}.pbf"
       ],
-      "minzoom": 12,
+      "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     }
   },
