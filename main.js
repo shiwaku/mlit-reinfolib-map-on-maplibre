@@ -41,6 +41,8 @@ const layerIds = [
   "XKT002",
   "XKT003",
   "XKT003-line",
+  "XKT004",
+  "XKT004-line",
   "XKT013",
 ];
 
@@ -95,6 +97,7 @@ function addPopupHandler(layerId) {
       layerId === "XKT001" ||
       layerId === "XKT002" ||
       layerId === "XKT003" ||
+      layerId === "XKT004" ||
       layerId === "XKT013";
     const coords = useLngLat
       ? [e.lngLat.lng, e.lngLat.lat]
