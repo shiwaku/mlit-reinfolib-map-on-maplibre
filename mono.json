@@ -133,14 +133,6 @@
       "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
-    "XKT016": {
-      "type": "vector",
-      "tiles": [
-        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT016/{z}/{x}/{y}.pbf"
-      ],
-      "minzoom": 11,
-      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
-    },
     "XKT017": {
       "type": "vector",
       "tiles": [
@@ -24885,6 +24877,44 @@
       "id": "XKT005-line",
       "type": "line",
       "source": "XKT004",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#003FFF",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT014",
+      "type": "fill",
+      "source": "XKT014",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "fire_prevention_ja"
+          ],
+          "防火地域",
+          "#FF7F00",
+          "準防火地域",
+          "#FFBF00",
+          "#333"
+        ],
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT014-line",
+      "type": "line",
+      "source": "XKT014",
       "source-layer": "hits",
       "paint": {
         "line-color": "#003FFF",
