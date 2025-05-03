@@ -26,7 +26,7 @@
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XPT002/{z}/{x}/{y}.pbf?year=2024"
       ],
-      "minzoom": 11,
+      "minzoom": 13,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
     "XKT001": {
@@ -61,10 +61,154 @@
       "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
     },
+    "XKT005": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT005/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT006": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT006/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT007": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT007/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT010": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT010/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT011": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT011/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
     "XKT013": {
       "type": "vector",
       "tiles": [
         "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT013/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT014": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT014/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT015": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT015/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT016": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT016/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT016": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT016/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT017": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT017/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT018": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT018/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 13,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT019": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT019/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 9,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT020": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT020/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT021": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT021/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT022": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT022/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT023": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT023/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT024": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT024/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 11,
+      "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
+    },
+    "XKT025": {
+      "type": "vector",
+      "tiles": [
+        "https://du6jhqfvlioa4.cloudfront.net/ex-api/external/XKT025/{z}/{x}/{y}.pbf"
       ],
       "minzoom": 11,
       "attribution": "<a href='https://www.reinfolib.mlit.go.jp/' target='_blank'>不動産情報ライブラリAPI（国土交通省）</a>"
@@ -24718,6 +24862,93 @@
       "paint": {
         "line-color": "#FF003F",
         "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT005",
+      "type": "fill",
+      "source": "XKT005",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#003FFF",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT005-line",
+      "type": "line",
+      "source": "XKT004",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#003FFF",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT006",
+      "type": "circle",
+      "source": "XKT006",
+      "source-layer": "hits",
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#009800",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT007",
+      "type": "circle",
+      "source": "XKT007",
+      "source-layer": "hits",
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#FF7F00",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT010",
+      "type": "circle",
+      "source": "XKT010",
+      "source-layer": "hits",
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#FF00BF",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT011",
+      "type": "circle",
+      "source": "XKT011",
+      "source-layer": "hits",
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#7F00FF",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#ffffff"
       },
       "layout": {
         "visibility": "none"

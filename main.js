@@ -14,6 +14,48 @@ const map = new maplibregl.Map({
   attributionControl: false,
 });
 
+//ジオコーダー（国土地理院 地名検索API）
+var geocoder_api = {
+  forwardGeocode: async (config) => {
+    const features = [];
+    const Text_Prefix = config.query.substr(0, 3);
+    try {
+      let request =
+        "https://msearch.gsi.go.jp/address-search/AddressSearch?q=" +
+        config.query;
+      const response = await fetch(request);
+      const geojson = await response.json();
+
+      for (var i = 0; i < geojson.length; i++) {
+        if (geojson[i].properties.title.indexOf(Text_Prefix) !== -1) {
+          let point = {
+            type: "Feature",
+            geometry: {
+              type: "Point",
+              coordinates: geojson[i].geometry.coordinates,
+            },
+            place_name: geojson[i].properties.title,
+            properties: geojson[i].properties,
+            text: geojson[i].properties.title,
+            place_type: ["place"],
+            center: geojson[i].geometry.coordinates,
+          };
+          features.push(point);
+        }
+      }
+    } catch (e) {
+      console.error(`Failed to forwardGeocode with error: ${e}`);
+    }
+    return {
+      features: features,
+    };
+  },
+};
+map.addControl(
+  new MaplibreGeocoder(geocoder_api, { maplibregl: maplibregl }),
+  "top-right"
+);
+
 map.addControl(new maplibregl.NavigationControl());
 map.addControl(new maplibregl.FullscreenControl());
 map.addControl(
@@ -34,6 +76,7 @@ map.addControl(
   })
 );
 
+
 const layerIds = [
   "XPT001",
   "XPT002",
@@ -43,6 +86,12 @@ const layerIds = [
   "XKT003-line",
   "XKT004",
   "XKT004-line",
+  "XKT005",
+  "XKT005-line",
+  "XKT006",
+  "XKT007",
+  "XKT010",
+  "XKT011",
   "XKT013",
 ];
 
@@ -98,6 +147,11 @@ function addPopupHandler(layerId) {
       layerId === "XKT002" ||
       layerId === "XKT003" ||
       layerId === "XKT004" ||
+      layerId === "XKT005" ||
+      layerId === "XKT006" ||
+      layerId === "XKT007" ||
+      layerId === "XKT010" ||
+      layerId === "XKT011" ||
       layerId === "XKT013";
     const coords = useLngLat
       ? [e.lngLat.lng, e.lngLat.lat]

@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>不動産情報ライブラリ</title>
   <link href="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+  <script src="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.2.0/dist/maplibre-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.2.0/dist/maplibre-gl-geocoder.css"
+    type="text/css" />
   <link href="style.css" rel="stylesheet" />
 </head>
 
@@ -67,6 +72,41 @@
             </div>
             <div class="select_box">
               <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT005,XKT005-line" />
+                <span class="slider"></span>
+              </label>
+              中学校区
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT006" />
+                <span class="slider"></span>
+              </label>
+              学校
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT007" />
+                <span class="slider"></span>
+              </label>
+              保育園・幼稚園等
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT010" />
+                <span class="slider"></span>
+              </label>
+              医療機関
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
+                <input type="checkbox" class="layer-switch" data-layer="XKT011" />
+                <span class="slider"></span>
+              </label>
+              福祉施設
+            </div>
+            <div class="select_box">
+              <label class="toggle-button-001">
                 <input type="checkbox" class="layer-switch" data-layer="XKT013" />
                 <span class="slider"></span>
               </label>
@@ -77,9 +117,6 @@
       </fieldset>
     </details>
   </div>
-
-  <script src="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.js"></script>
-  <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
   <script src="main.js"></script>
 </body>
 
