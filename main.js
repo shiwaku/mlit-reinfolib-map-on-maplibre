@@ -94,6 +94,7 @@ const layerIds = [
   "XKT011",
   "XKT013",
   "XKT014",
+  "XKT015",
 ];
 
 map.on("load", () => {
@@ -154,7 +155,8 @@ function addPopupHandler(layerId) {
       layerId === "XKT010" ||
       layerId === "XKT011" ||
       layerId === "XKT013" ||
-      layerId === "XKT014";
+      layerId === "XKT014" ||
+      layerId === "XKT015";
     const coords = useLngLat
       ? [e.lngLat.lng, e.lngLat.lat]
       : e.features[0].geometry.coordinates.slice();

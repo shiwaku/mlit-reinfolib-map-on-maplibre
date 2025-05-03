@@ -24801,6 +24801,9 @@
         ],
         "fill-opacity": 0.2,
         "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
       }
     },
     {
@@ -24830,6 +24833,9 @@
           "#333"
         ],
         "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
       }
     },
     {
@@ -24985,6 +24991,19 @@
       }
     },
     {
+      "id": "XKT015",
+      "type": "line",
+      "source": "XKT015",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#FF00BF",
+        "line-width": 10
+      },
+      "layout": {
+        "visibility": "visible"
+      }
+    },
+    {
       "id": "XPT001",
       "type": "circle",
       "source": "XPT001",
@@ -25009,6 +25028,32 @@
       }
     },
     {
+      "id": "XPT001-symbol",
+      "type": "symbol",
+      "source": "XPT001",
+      "source-layer": "hits",
+      "layout": {
+        "text-field": [
+          "get",
+          "u_transaction_price_total_ja"
+        ],
+        "text-font": [
+          "NotoSansJP-Regular"
+        ],
+        "text-size": 14,
+        "text-offset": [
+          0,
+          -1.5
+        ]
+      },
+      "paint": {
+        "text-color": "#ff0000",
+        "text-halo-blur": 0.8,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
       "id": "XPT002-symbol",
       "type": "symbol",
       "source": "XPT002",
@@ -25028,9 +25073,46 @@
         ]
       },
       "paint": {
-        "text-color": "rgba(255,255,255,1)",
+        "text-color": "#0000ff",
         "text-halo-blur": 0.8,
-        "text-halo-color": "rgba(0,0,0,1)",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "XKT015-symbol",
+      "type": "symbol",
+      "source": "XKT015",
+      "source-layer": "hits",
+      "layout": {
+        "symbol-placement": "line-center",
+        "text-field": [
+          "concat",
+          [
+            "get",
+            "S12_001_ja"
+          ],
+          "\n",
+          [
+            "get",
+            "S12_053"
+          ],
+          "人/日"
+        ],
+        "text-font": [
+          "NotoSansJP-Regular"
+        ],
+        "text-allow-overlap": true,
+        "text-size": 14,
+        "text-offset": [
+          0,
+          -2
+        ]
+      },
+      "paint": {
+        "text-color": "#FF00BF",
+        "text-halo-blur": 0.8,
+        "text-halo-color": "#ffffff",
         "text-halo-width": 1
       }
     }
