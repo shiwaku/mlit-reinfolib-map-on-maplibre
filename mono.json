@@ -25007,6 +25007,32 @@
         "circle-stroke-width": 1,
         "circle-stroke-color": "#ffffff"
       }
+    },
+    {
+      "id": "XPT002-symbol",
+      "type": "symbol",
+      "source": "XPT002",
+      "source-layer": "hits",
+      "layout": {
+        "text-field": [
+          "get",
+          "u_current_years_price_ja"
+        ],
+        "text-font": [
+          "NotoSansJP-Regular"
+        ],
+        "text-size": 14,
+        "text-offset": [
+          0,
+          -1.5
+        ]
+      },
+      "paint": {
+        "text-color": "rgba(255,255,255,1)",
+        "text-halo-blur": 0.8,
+        "text-halo-color": "rgba(0,0,0,1)",
+        "text-halo-width": 1
+      }
     }
   ]
 }
