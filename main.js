@@ -94,10 +94,26 @@ const layerIds = [
   "XKT011",
   "XKT013",
   "XKT014",
+  "XKT014-line",
   "XKT015",
   "XKT016",
+  "XKT016-line",
   "XKT017",
   "XKT018",
+  "XKT019",
+  "XKT019-line",
+  "XKT020",
+  "XKT020-line",
+  "XKT021",
+  "XKT021-line",
+  "XKT022",
+  "XKT022-line",
+  "XKT023",
+  "XKT023-line",
+  "XKT024",
+  "XKT024-line",
+  "XKT025",
+  "XKT025-line",
 ];
 
 map.on("load", () => {
@@ -144,30 +160,33 @@ function setupLayerSwitches() {
 /**
  * 各レイヤーにポップアップのクリックハンドラを登録
  */
+/*
 function addPopupHandler(layerId) {
   map.on("click", layerId, (e) => {
-    // XKT001 と XKT002 はクリック位置を e.lngLat から取得
+    // ポリゴン はクリック位置を e.lngLat から取得
     const useLngLat =
       layerId === "XKT001" ||
       layerId === "XKT002" ||
       layerId === "XKT003" ||
       layerId === "XKT004" ||
       layerId === "XKT005" ||
-      layerId === "XKT006" ||
-      layerId === "XKT007" ||
-      layerId === "XKT010" ||
-      layerId === "XKT011" ||
       layerId === "XKT013" ||
       layerId === "XKT014" ||
-      layerId === "XKT015" ||
-      layerId === "XKT016" ||
-      layerId === "XKT017" ||
-      layerId === "XKT018";
+      layerId === "XKT016";
     const coords = useLngLat
       ? [e.lngLat.lng, e.lngLat.lat]
       : e.features[0].geometry.coordinates.slice();
     const props = e.features[0].properties;
     createPopup(coords, props);
+  });
+}
+*/
+
+function addPopupHandler(layerId) {
+  map.on("click", layerId, (e) => {
+    const feature = e.features[0];
+    const coords = [e.lngLat.lng, e.lngLat.lat];  // ← これだけで OK
+    createPopup(coords, feature.properties);
   });
 }
 

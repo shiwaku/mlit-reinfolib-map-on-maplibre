@@ -24923,7 +24923,18 @@
       "source": "XKT014",
       "source-layer": "hits",
       "paint": {
-        "line-color": "#003FFF",
+        "line-color": [
+          "match",
+          [
+            "get",
+            "fire_prevention_ja"
+          ],
+          "防火地域",
+          "#FF7F00",
+          "準防火地域",
+          "#FFBF00",
+          "#333"
+        ],
         "line-width": 2
       },
       "layout": {
@@ -24951,6 +24962,195 @@
       "source-layer": "hits",
       "paint": {
         "line-color": "#FF7F00",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT019",
+      "type": "fill",
+      "source": "XKT019",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#00BFFF",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT019-line",
+      "type": "line",
+      "source": "XKT019",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#00BFFF",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT020",
+      "type": "fill",
+      "source": "XKT020",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#FF00BF",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT020-line",
+      "type": "line",
+      "source": "XKT020",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#FF00BF",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT021",
+      "type": "fill",
+      "source": "XKT021",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#CB6500",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT021-line",
+      "type": "line",
+      "source": "XKT021",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#CB6500",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT022",
+      "type": "fill",
+      "source": "XKT022",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#CB0065",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT022-line",
+      "type": "line",
+      "source": "XKT022",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#CB0065",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT023",
+      "type": "fill",
+      "source": "XKT023",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#6500CB",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT023-line",
+      "type": "line",
+      "source": "XKT023",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#6500CB",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT024",
+      "type": "fill",
+      "source": "XKT024",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#0065CB",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT024-line",
+      "type": "line",
+      "source": "XKT024",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#0065CB",
+        "line-width": 2
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT025",
+      "type": "fill",
+      "source": "XKT025",
+      "source-layer": "hits",
+      "paint": {
+        "fill-color": "#009826",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "rgba(0, 0, 0, 1)"
+      },
+      "layout": {
+        "visibility": "none"
+      }
+    },
+    {
+      "id": "XKT025-line",
+      "type": "line",
+      "source": "XKT025",
+      "source-layer": "hits",
+      "paint": {
+        "line-color": "#009826",
         "line-width": 2
       },
       "layout": {
