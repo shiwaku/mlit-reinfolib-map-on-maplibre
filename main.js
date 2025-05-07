@@ -3,7 +3,7 @@ maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const map = new maplibregl.Map({
   container: "map",
-  style: "mono.json",
+  style: "reinfolib.json",
   center: [139.47507, 35.90596],
   zoom: 12,
   minZoom: 11,
