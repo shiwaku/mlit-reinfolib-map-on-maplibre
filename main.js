@@ -79,7 +79,9 @@ map.addControl(
 
 const layerIds = [
   "XPT001",
+  "XPT001-symbol",
   "XPT002",
+  "XPT002-symbol",
   "XKT001",
   "XKT002",
   "XKT003",
