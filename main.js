@@ -119,7 +119,7 @@ const layerIds = [
 ];
 
 map.on("load", () => {
-  map.showTileBoundaries = false;
+  map.showTileBoundaries = true;
   setupLayerSwitches();
   layerIds.forEach(addPopupHandler);
 });
@@ -184,6 +184,7 @@ function addPopupHandler(layerId) {
 }
 */
 
+/*
 function addPopupHandler(layerId) {
   map.on("click", layerId, (e) => {
     const feature = e.features[0];
@@ -191,10 +192,50 @@ function addPopupHandler(layerId) {
     createPopup(coords, feature.properties);
   });
 }
+*/
 
-/**
- * プロパティからテーブルを生成し、Popup を表示
- */
+function addPopupHandler(layerId) {
+  map.on("click", layerId, (e) => {
+    // クリック位置に描画されている同一レイヤーの全フィーチャを取得
+    const features = map.queryRenderedFeatures(e.point, {
+      layers: [layerId]
+    });
+    if (!features.length) return;
+
+    // ポップアップ設置位置
+    const coords = [e.lngLat.lng, e.lngLat.lat];
+    // コンテナ要素
+    const container = document.createElement("div");
+
+    features.forEach((feature, idx) => {
+      // 各フィーチャの見出し（レイヤー名＋番号）
+      const title = document.createElement("h4");
+      title.textContent = `${layerId} (${idx + 1})`;
+      title.style.margin = "4px 0 2px";
+      title.style.fontSize = "90%";
+      container.appendChild(title);
+
+      // 属性テーブル
+      const table = document.createElement("table");
+      table.className = "popup-table";
+      table.innerHTML =
+        "<tr><th>属性</th><th>値</th></tr>" +
+        Object.entries(feature.properties)
+          .map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`)
+          .join("");
+      container.appendChild(table);
+    });
+
+    // ポップアップ表示
+    new maplibregl.Popup({ maxWidth: "300px" })
+      .setLngLat(coords)
+      .setDOMContent(container)
+      .addTo(map);
+  });
+}
+
+/*
+// プロパティからテーブルを生成し、Popup を表示
 function createPopup(coordinates, properties) {
   const table = document.createElement("table");
   table.className = "popup-table";
@@ -209,3 +250,4 @@ function createPopup(coordinates, properties) {
     .setDOMContent(table)
     .addTo(map);
 }
+*/
