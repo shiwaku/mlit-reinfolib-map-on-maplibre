@@ -25167,7 +25167,7 @@
         "line-width": 10
       },
       "layout": {
-        "visibility": "visible"
+        "visibility": "none"
       }
     },
     {
@@ -25312,7 +25312,8 @@
         "text-offset": [
           0,
           -2
-        ]
+        ],
+        "visibility": "none"
       },
       "paint": {
         "text-color": "#9800CB",
